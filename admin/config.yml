@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "data"
+    label: "Site İçerikleri"
+    files:
+      - name: "genel"
+        label: "Tüm İçerikler (Düzenle)"
+        file: "data.json"
+        fields:
+          - name: "kimlik"
+            label: "Kimlik Bilgileri"
+            widget: "object"
+            fields:
+              - {label: "İsim", name: "isim", widget: "string"}
+              - {label: "Unvan", name: "unvan", widget: "string"}
+              - {label: "Profil Resmi", name: "profilResmi", widget: "image"}
+          - name: "intro"
+            label: "Giriş Ekranı"
+            widget: "object"
+            fields:
+              - {label: "Arka Plan Resmi", name: "resim", widget: "image"}
+          - name: "hakkimda"
+            label: "Hakkımda Kısmı"
+            widget: "object"
+            fields:
+              - {label: "Başlık", name: "baslik", widget: "string"}
+              - {label: "Yazı", name: "yazi", widget: "text"}
+              - {label: "Büyük Resim", name: "resim", widget: "image"}
+          - name: "projeler"
+            label: "Projelerim"
+            widget: "list"
+            fields:
+              - {label: "Yıl", name: "yil", widget: "string"}
+              - {label: "Film Adı", name: "baslik", widget: "string"}
+              - {label: "Tür", name: "tur", widget: "string"}
+              - {label: "Açıklama", name: "aciklama", widget: "text"}
+              - {label: "Afiş", name: "afis", widget: "image"}
